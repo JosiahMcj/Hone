@@ -1,0 +1,28 @@
+{
+ "_registered": "Registered from A/A' before any comparison was judged; see PROTOCOL.md. 4B + 14B (A3/A4, first box); 30B-A3B + 32B (A9/A11, second box); 14B chat/prompt-cache prefill margin (A18, first box).",
+ "mlx-community/Qwen2.5-Coder-14B-Instruct-4bit_chat": {
+  "metric": "prefill_s",
+  "g1_min_prefill_reduction": 0.10,
+  "aa_prefill_mad_rel": 0.0055
+ },
+ "mlx-community/Qwen2.5-Coder-32B-Instruct-4bit": {
+  "g1_min_median_rel": 0.10,
+  "g2_max_regression_rel": 0.05,
+  "aa_mad_rel": 0.0016
+ },
+ "mlx-community/Qwen3-Coder-30B-A3B-Instruct-4bit": {
+  "g1_min_median_rel": 0.10,
+  "g2_max_regression_rel": 0.05,
+  "aa_mad_rel": 0.0169
+ },
+ "mlx-community/Qwen3-4B-Instruct-2507-4bit": {
+  "g1_min_median_rel": 0.10,
+  "g2_max_regression_rel": 0.05,
+  "aa_mad_rel": 0.0116
+ },
+ "mlx-community/Qwen2.5-Coder-14B-Instruct-4bit": {
+  "g1_min_median_rel": 0.10,
+  "g2_max_regression_rel": 0.05,
+  "aa_mad_rel": 0.0076
+ }
+}

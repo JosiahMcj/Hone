@@ -1,0 +1,108 @@
+{
+ "model": "mlx-community/Qwen2.5-Coder-32B-Instruct-4bit",
+ "label": "screen-spec-32b-05b-k2",
+ "screen": true,
+ "g4_contamination": [],
+ "g4_pass": true,
+ "decode": {
+  "summary": {
+   "n": 24,
+   "median_rel": 0.19809669886531112,
+   "mad_rel": 0.07261809980464773,
+   "min_rel": -0.01586185046001265,
+   "max_rel": 0.524602614438801
+  },
+  "sign_test": {
+   "verdict": "POWERED",
+   "pos": 22,
+   "neg": 2,
+   "discordant": 24,
+   "p": 3.5881996154785156e-05
+  },
+  "missing_pairs": []
+ },
+ "g1_pass": true,
+ "prefill_summary": {
+  "n": 24,
+  "median_rel": -0.019222038747325976,
+  "mad_rel": 0.003923438412324842,
+  "min_rel": -0.05673782197997601,
+  "max_rel": -0.004436360492547475
+ },
+ "wall_rel": -0.10996706476498541,
+ "g2_pass": true,
+ "g3_mismatches": [
+  "chat-01|rep1",
+  "chat-01|rep2",
+  "chat-03|rep1",
+  "chat-03|rep2",
+  "chat-05|rep1"
+ ],
+ "g3_pass": false,
+ "finish_reason_shift": {
+  "base": {
+   "length": 16,
+   "stop": 8
+  },
+  "cand": {
+   "length": 16,
+   "stop": 8
+  }
+ },
+ "g5": "PENDING (different-day replication required)",
+ "promotable": false
+}
+{
+ "model": "mlx-community/Qwen2.5-Coder-32B-Instruct-4bit",
+ "label": "screen-spec-32b-05b-k3",
+ "screen": true,
+ "g4_contamination": [],
+ "g4_pass": true,
+ "decode": {
+  "summary": {
+   "n": 24,
+   "median_rel": 0.10221901818056223,
+   "mad_rel": 0.13206083721918488,
+   "min_rel": -0.172631568805106,
+   "max_rel": 0.5976868588904902
+  },
+  "sign_test": {
+   "verdict": "POWERED",
+   "pos": 18,
+   "neg": 6,
+   "discordant": 24,
+   "p": 0.022655844688415527
+  },
+  "missing_pairs": []
+ },
+ "g1_pass": true,
+ "prefill_summary": {
+  "n": 24,
+  "median_rel": -0.050458529947568664,
+  "mad_rel": 0.0051741279339097,
+  "min_rel": -0.3666958811947596,
+  "max_rel": 0.4631342219200527
+ },
+ "wall_rel": -0.07606566460865438,
+ "g2_pass": false,
+ "g3_mismatches": [
+  "chat-01|rep1",
+  "chat-01|rep2",
+  "chat-03|rep1",
+  "chat-03|rep2",
+  "chat-05|rep1"
+ ],
+ "g3_pass": false,
+ "finish_reason_shift": {
+  "base": {
+   "length": 16,
+   "stop": 8
+  },
+  "cand": {
+   "length": 16,
+   "stop": 8
+  }
+ },
+ "g5": "PENDING (different-day replication required)",
+ "promotable": false
+}

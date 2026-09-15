@@ -1,0 +1,5 @@
+{
+  "model": "mlx-community/Qwen2.5-Coder-14B-Instruct-4bit",
+  "reuse_prompt_cache": true,
+  "label": "chat-14b-cache"
+}

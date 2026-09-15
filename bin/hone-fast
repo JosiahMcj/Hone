@@ -1,0 +1,14 @@
+#!/bin/zsh
+# Hone's promoted config (RESULTS.md, PROMOTED 2026-08-12): Qwen2.5-
+# Coder-14B with a 0.5B speculative draft, k=2, greedy. Measured
+# 11.88 -> 21.04-22.47 tps decode on this box, prefill unchanged,
+# quality = near-tie-flip class (see PROTOCOL A5).
+#
+# Usage: hone-fast "your prompt"          (extra args pass through)
+exec "$HOME/hone/.venv/bin/python" -m mlx_lm generate \
+  --model mlx-community/Qwen2.5-Coder-14B-Instruct-4bit \
+  --draft-model mlx-community/Qwen2.5-0.5B-Instruct-4bit \
+  --num-draft-tokens 2 \
+  --temp 0.0 \
+  --max-tokens 1024 \
+  --prompt "$@"

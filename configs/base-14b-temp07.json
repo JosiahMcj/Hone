@@ -1,0 +1,6 @@
+{
+  "model": "mlx-community/Qwen2.5-Coder-14B-Instruct-4bit",
+  "temp": 0.7,
+  "seed": 7,
+  "label": "base-14b-temp07"
+}

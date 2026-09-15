@@ -1,0 +1,70 @@
+[
+  {
+    "id": "short-followup",
+    "category": "chat",
+    "prefix_messages": [
+      {"role": "system", "content": "You are a terse senior engineer. Answer in at most three sentences."},
+      {"role": "user", "content": "What does the SOLID 'S' principle mean?"},
+      {"role": "assistant", "content": "Single Responsibility: a class or module should have exactly one reason to change. Keep unrelated concerns in separate units. It reduces coupling and makes changes local."}
+    ],
+    "final_user": "And the 'O'?",
+    "max_tokens": 128
+  },
+  {
+    "id": "doc-qa-medium",
+    "category": "long-context",
+    "prefix_messages": [
+      {"role": "system", "content": "You answer questions strictly from the provided document. If the document does not say, reply 'not stated'."},
+      {"role": "user", "content": "DOCUMENT:\n\nThe Kepler-7 telemetry pipeline ingests raw cadence frames at 30-minute intervals. Stage 1 (deblooming) removes saturated-column bleed using a per-quarter flat field; frames failing the saturation-fraction gate (>4.2% saturated pixels) are quarantined, not dropped. Stage 2 (cotrending) fits the first eight cotrending basis vectors per module output, then subtracts the reconstructed systematic signal; the fit is ridge-regularized with lambda tuned per quarter by generalized cross-validation. Stage 3 (harmonic removal) notches the 1/6-hour thermal oscillation and its first two overtones. Stage 4 (stitching) concatenates quarters with a median-matched offset and flags any inter-quarter gap longer than 3 cadences. Data products: PDCSAP flux (all stages), SAP flux (stage 1 only), and a per-cadence quality bitmask. The quality bitmask bit 7 marks reaction-wheel desaturation events, during which pointing jitter rises threefold; downstream transit searches must mask bit-7 cadences. Retention: raw frames 18 months, calibrated products indefinitely.\n\nAcknowledge you have read it."},
+      {"role": "assistant", "content": "Read. I will answer only from the document and say 'not stated' otherwise."}
+    ],
+    "final_user": "During reaction-wheel desaturation, how much does pointing jitter rise, and what must transit searches do about it?",
+    "max_tokens": 128
+  },
+  {
+    "id": "code-review-medium",
+    "category": "code",
+    "prefix_messages": [
+      {"role": "system", "content": "You are a code reviewer. Be concrete and cite line behavior."},
+      {"role": "user", "content": "Review this module:\n\n```python\nimport threading\n\nclass RateLimiter:\n    def __init__(self, max_per_sec):\n        self.capacity = max_per_sec\n        self.tokens = max_per_sec\n        self.last = time.monotonic()\n        self.lock = threading.Lock()\n\n    def allow(self):\n        with self.lock:\n            now = time.monotonic()\n            self.tokens = min(self.capacity, self.tokens + (now - self.last) * self.capacity)\n            self.last = now\n            if self.tokens >= 1:\n                self.tokens -= 1\n                return True\n            return False\n\n    def block_until_allowed(self):\n        while not self.allow():\n            pass\n```\n\nGive your top findings."},
+      {"role": "assistant", "content": "Findings: (1) `time` is used but never imported -- NameError on first call. (2) `block_until_allowed` busy-spins, pinning a core; it should sleep for the estimated refill time. (3) The token refill is correct token-bucket math and the lock makes `allow` thread-safe."}
+    ],
+    "final_user": "Rewrite block_until_allowed to sleep instead of busy-spinning, keeping it correct under the lock.",
+    "max_tokens": 160
+  },
+  {
+    "id": "agent-tooltrace-long",
+    "category": "long-context",
+    "prefix_messages": [
+      {"role": "system", "content": "You are an agent that has been debugging a failing deploy. Continue the session."},
+      {"role": "user", "content": "The staging deploy of service `ledger-api` is crash-looping. Here is the tool trace so far.\n\n$ kubectl get pods -n staging | grep ledger\nledger-api-7c9f4b8d6-2xk9q   0/1   CrashLoopBackOff   6   11m\n\n$ kubectl logs ledger-api-7c9f4b8d6-2xk9q -n staging --previous\n2026-09-10T14:02:11Z INFO  boot: config loaded from /etc/ledger/config.yaml\n2026-09-10T14:02:11Z INFO  boot: connecting to postgres at pg-staging:5432\n2026-09-10T14:02:41Z ERROR boot: postgres connect timeout after 30s\n2026-09-10T14:02:41Z FATAL boot: cannot start without database; exiting(1)\n\n$ kubectl exec -it deploy/ledger-api -n staging -- nslookup pg-staging\nServer:  10.96.0.10\nName:    pg-staging.staging.svc.cluster.local\nAddress: 10.100.4.17\n\n$ kubectl get networkpolicy -n staging\nNAME               POD-SELECTOR         AGE\ndefault-deny-all   <none>               40d\nallow-web-egress   app=ledger-api       12m\n\n$ kubectl describe networkpolicy allow-web-egress -n staging\nEgress:\n  To:\n    - ipBlock: 0.0.0.0/0\n  Ports:\n    - protocol: TCP  port: 443\n    - protocol: TCP  port: 80\n\nDNS resolves fine, the pod boots, but the DB connect times out."},
+      {"role": "assistant", "content": "The symptom plus the policies point at egress filtering, not DNS or config. `default-deny-all` denies everything not explicitly allowed, and `allow-web-egress` (which selects app=ledger-api) permits egress only to TCP 443 and 80. Postgres is on 5432, so the DB connection is silently dropped and times out at 30s. DNS works because that is UDP/53 to the in-cluster resolver, unaffected by this policy's TCP rules -- which is why resolution succeeds but the connection does not."},
+      {"role": "user", "content": "That matches. Before I change anything, what would you check to be sure it is the policy and not the DB being down?"},
+      {"role": "assistant", "content": "Two quick checks: (1) from a pod NOT selected by allow-web-egress (or a temporary debug pod with no egress restriction), open a TCP connection to pg-staging:5432 -- if that succeeds while the ledger pod cannot, the DB is up and the policy is the difference. (2) `kubectl get endpoints pg-staging -n staging` to confirm the service has a ready backend address; a populated endpoints list means postgres itself is serving."}
+    ],
+    "final_user": "Good. Now write the minimal NetworkPolicy patch that lets ledger-api reach postgres on 5432 without widening anything else.",
+    "max_tokens": 192
+  },
+  {
+    "id": "spec-recall-long",
+    "category": "long-context",
+    "prefix_messages": [
+      {"role": "system", "content": "You are a careful spec assistant. Quote the spec when relevant."},
+      {"role": "user", "content": "SPEC v2.3 -- Idempotent Payment Intents\n\n1. Every create-intent request carries an Idempotency-Key header (UUIDv4). Keys are scoped per merchant and expire 24h after first use.\n2. A repeated request with the same key and a byte-identical body returns the original response and status, including the original intent id. This is a replay.\n3. A repeated request with the same key but a DIFFERENT body returns 409 Conflict with error code idempotency_key_reuse. The server MUST NOT create a second intent.\n4. Intents are created in state `requires_confirmation`. Confirmation is a separate endpoint and is itself idempotent by intent id (not by header key).\n5. If the first request is still in flight when a replay arrives, the server holds the replay up to 5s for the original to settle, then returns 409 with error code request_in_progress if it has not.\n6. Amount is in minor units, integer, and immutable after creation. Currency is ISO-4217 and must match the merchant's settlement currency or the request is rejected 422.\n7. Webhooks: payment_intent.created fires exactly once per intent, at creation, not on replays.\n\nConfirm receipt."},
+      {"role": "assistant", "content": "Received SPEC v2.3. Ready."}
+    ],
+    "final_user": "A client retries create-intent with the same Idempotency-Key but a changed amount, 0.8s after the first request which is still in flight. Walk through exactly what the server returns and why, citing the clauses.",
+    "max_tokens": 220
+  },
+  {
+    "id": "short-math-followup",
+    "category": "chat",
+    "prefix_messages": [
+      {"role": "system", "content": "You are a math tutor. Show one line of working."},
+      {"role": "user", "content": "What is the derivative of x^3?"},
+      {"role": "assistant", "content": "d/dx x^3 = 3x^2 (power rule: bring down the 3, subtract one from the exponent)."}
+    ],
+    "final_user": "And its second derivative?",
+    "max_tokens": 96
+  }
+]

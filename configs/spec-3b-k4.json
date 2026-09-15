@@ -1,0 +1,6 @@
+{
+ "model": "mlx-community/Qwen2.5-Coder-14B-Instruct-4bit",
+ "draft_model": "mlx-community/Qwen2.5-Coder-3B-Instruct-4bit",
+ "num_draft_tokens": 4,
+ "label": "spec-3b-k4"
+}

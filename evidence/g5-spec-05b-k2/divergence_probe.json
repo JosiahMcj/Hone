@@ -1,0 +1,71 @@
+{
+ "model": "mlx-community/Qwen2.5-Coder-14B-Instruct-4bit",
+ "cases": [
+  {
+   "prompt": "code-03",
+   "div_char": 833,
+   "div_token_index": 219,
+   "exact_token_prefix": true,
+   "divergence": {
+    "gap": 0.015625,
+    "top": " human",
+    "second": " a"
+   },
+   "controls": [
+    {
+     "gap": 4.265625,
+     "top": "bin",
+     "second": "usr",
+     "at": "25%"
+    },
+    {
+     "gap": 13.328125,
+     "top": "\"\n\n",
+     "second": "\";\n\n",
+     "at": "50%"
+    },
+    {
+     "gap": 13.484375,
+     "top": " by",
+     "second": " with",
+     "at": "75%"
+    }
+   ],
+   "base_next": "human-readab",
+   "cand_next": "a human-read"
+  },
+  {
+   "prompt": "code-04",
+   "div_char": 428,
+   "div_token_index": 97,
+   "exact_token_prefix": true,
+   "divergence": {
+    "gap": 0.015625,
+    "top": "    \n",
+    "second": "   "
+   },
+   "controls": [
+    {
+     "gap": 6.75,
+     "top": " Python",
+     "second": " steps",
+     "at": "25%"
+    },
+    {
+     "gap": 7.015625,
+     "top": " file",
+     "second": " JSON",
+     "at": "50%"
+    },
+    {
+     "gap": 6.140625,
+     "top": "import",
+     "second": "from",
+     "at": "75%"
+    }
+   ],
+   "base_next": "with open(fi",
+   "cand_next": "\n    # Read "
+  }
+ ]
+}

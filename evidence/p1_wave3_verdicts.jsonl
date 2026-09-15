@@ -1,0 +1,108 @@
+{
+ "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+ "label": "screen3-4b-spec-k2",
+ "screen": true,
+ "g4_contamination": [],
+ "g4_pass": true,
+ "decode": {
+  "summary": {
+   "n": 24,
+   "median_rel": 0.18372438475680009,
+   "mad_rel": 0.11336628196277276,
+   "min_rel": -0.21666471306719737,
+   "max_rel": 0.5585610183649017
+  },
+  "sign_test": {
+   "verdict": "POWERED",
+   "pos": 20,
+   "neg": 4,
+   "discordant": 24,
+   "p": 0.001543879508972168
+  },
+  "missing_pairs": []
+ },
+ "g1_pass": true,
+ "prefill_summary": {
+  "n": 24,
+  "median_rel": -0.1691531919460828,
+  "mad_rel": 0.02203786924191753,
+  "min_rel": -0.7234186835287494,
+  "max_rel": -0.034631579147949676
+ },
+ "wall_rel": -0.03734082232690672,
+ "g2_pass": false,
+ "g3_mismatches": [
+  "chat-01|rep1",
+  "chat-01|rep2",
+  "chat-02|rep1",
+  "chat-02|rep2",
+  "chat-03|rep1"
+ ],
+ "g3_pass": false,
+ "finish_reason_shift": {
+  "base": {
+   "length": 16,
+   "stop": 8
+  },
+  "cand": {
+   "length": 16,
+   "stop": 8
+  }
+ },
+ "g5": "PENDING (different-day replication required)",
+ "promotable": false
+}
+{
+ "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+ "label": "screen3-4b-spec-k3",
+ "screen": true,
+ "g4_contamination": [],
+ "g4_pass": true,
+ "decode": {
+  "summary": {
+   "n": 24,
+   "median_rel": 0.1045720359373229,
+   "mad_rel": 0.150978505724832,
+   "min_rel": -0.2867492264707209,
+   "max_rel": 0.5538221215911587
+  },
+  "sign_test": {
+   "verdict": "POWERED",
+   "pos": 17,
+   "neg": 7,
+   "discordant": 24,
+   "p": 0.06391465663909912
+  },
+  "missing_pairs": []
+ },
+ "g1_pass": false,
+ "prefill_summary": {
+  "n": 24,
+  "median_rel": -0.17800855315051245,
+  "mad_rel": 0.014911671392940695,
+  "min_rel": -0.3063316714049227,
+  "max_rel": 0.0884707666878155
+ },
+ "wall_rel": 0.007815432858604865,
+ "g2_pass": false,
+ "g3_mismatches": [
+  "chat-01|rep1",
+  "chat-01|rep2",
+  "chat-02|rep1",
+  "chat-02|rep2",
+  "chat-03|rep1"
+ ],
+ "g3_pass": false,
+ "finish_reason_shift": {
+  "base": {
+   "length": 16,
+   "stop": 8
+  },
+  "cand": {
+   "length": 16,
+   "stop": 8
+  }
+ },
+ "g5": "PENDING (different-day replication required)",
+ "promotable": false
+}

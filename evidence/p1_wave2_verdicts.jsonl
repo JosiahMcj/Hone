@@ -1,0 +1,215 @@
+{
+ "model": "mlx-community/Qwen2.5-Coder-14B-Instruct-4bit",
+ "label": "screen2-champ-kv4",
+ "screen": true,
+ "g4_contamination": [
+  [
+   "base",
+   "rep1",
+   0.39366601539260637
+  ],
+  [
+   "base",
+   "rep2",
+   -0.39366601539260626
+  ]
+ ],
+ "g4_pass": false,
+ "decode": {
+  "summary": {
+   "n": 24,
+   "median_rel": -0.24514841207389376,
+   "mad_rel": 0.3328011041981632,
+   "min_rel": -0.6766351153067477,
+   "max_rel": 0.5315001012858331
+  },
+  "sign_test": {
+   "verdict": "POWERED",
+   "pos": 6,
+   "neg": 18,
+   "discordant": 24,
+   "p": 0.022655844688415527
+  },
+  "missing_pairs": []
+ },
+ "g1_pass": false,
+ "prefill_summary": {
+  "n": 24,
+  "median_rel": -0.12343667595698365,
+  "mad_rel": 0.0821779764586435,
+  "min_rel": -0.540685132735461,
+  "max_rel": 3.9559901905000885
+ },
+ "wall_rel": 0.2757851735764725,
+ "g2_pass": false,
+ "g3_mismatches": [
+  "chat-01|rep1",
+  "chat-01|rep2",
+  "chat-02|rep1",
+  "chat-02|rep2",
+  "chat-03|rep1"
+ ],
+ "g3_pass": false,
+ "finish_reason_shift": {
+  "base": {
+   "length": 18,
+   "stop": 6
+  },
+  "cand": {
+   "length": 18,
+   "stop": 6
+  }
+ },
+ "g5": "PENDING (different-day replication required)",
+ "promotable": false
+}
+{
+ "model": "mlx-community/Qwen2.5-Coder-14B-Instruct-4bit",
+ "label": "screen2-champ-ps512",
+ "screen": true,
+ "g4_contamination": [],
+ "g4_pass": true,
+ "decode": {
+  "summary": {
+   "n": 24,
+   "median_rel": 0.0012003772814734859,
+   "mad_rel": 0.006473650652745522,
+   "min_rel": -0.013655316284961527,
+   "max_rel": 0.06581258434726389
+  },
+  "sign_test": {
+   "verdict": "POWERED",
+   "pos": 12,
+   "neg": 12,
+   "discordant": 24,
+   "p": 1.0
+  },
+  "missing_pairs": []
+ },
+ "g1_pass": false,
+ "prefill_summary": {
+  "n": 24,
+  "median_rel": -0.00017178530059119845,
+  "mad_rel": 0.010517701525535439,
+  "min_rel": -0.029081904414754445,
+  "max_rel": 1.5016408605339886
+ },
+ "wall_rel": -0.002478016326837751,
+ "g2_pass": true,
+ "g3_mismatches": [],
+ "g3_pass": true,
+ "finish_reason_shift": {
+  "base": {
+   "length": 18,
+   "stop": 6
+  },
+  "cand": {
+   "length": 18,
+   "stop": 6
+  }
+ },
+ "g5": "PENDING (different-day replication required)",
+ "promotable": false
+}
+{
+ "model": "mlx-community/Qwen2.5-Coder-14B-Instruct-4bit",
+ "label": "screen2-champ-ps4096",
+ "screen": true,
+ "g4_contamination": [],
+ "g4_pass": true,
+ "decode": {
+  "summary": {
+   "n": 24,
+   "median_rel": 0.002721307057238387,
+   "mad_rel": 0.001617266967498865,
+   "min_rel": -0.009256808125572502,
+   "max_rel": 0.015574498269323334
+  },
+  "sign_test": {
+   "verdict": "POWERED",
+   "pos": 21,
+   "neg": 3,
+   "discordant": 24,
+   "p": 0.0002771615982055664
+  },
+  "missing_pairs": []
+ },
+ "g1_pass": false,
+ "prefill_summary": {
+  "n": 24,
+  "median_rel": 0.004838281712876813,
+  "mad_rel": 0.0035803387748721827,
+  "min_rel": -0.01161547948887387,
+  "max_rel": 0.0310722689529368
+ },
+ "wall_rel": -0.003986735774913153,
+ "g2_pass": true,
+ "g3_mismatches": [],
+ "g3_pass": true,
+ "finish_reason_shift": {
+  "base": {
+   "length": 18,
+   "stop": 6
+  },
+  "cand": {
+   "length": 18,
+   "stop": 6
+  }
+ },
+ "g5": "PENDING (different-day replication required)",
+ "promotable": false
+}
+{
+ "model": "mlx-community/Qwen2.5-Coder-14B-Instruct-4bit",
+ "label": "screen2-kv8-solo",
+ "screen": true,
+ "g4_contamination": [],
+ "g4_pass": true,
+ "decode": {
+  "summary": {
+   "n": 24,
+   "median_rel": -0.4430772500070205,
+   "mad_rel": 0.055624566100764605,
+   "min_rel": -0.559991246716913,
+   "max_rel": -0.2947718973934782
+  },
+  "sign_test": {
+   "verdict": "POWERED",
+   "pos": 0,
+   "neg": 24,
+   "discordant": 24,
+   "p": 1.1920928955078125e-07
+  },
+  "missing_pairs": []
+ },
+ "g1_pass": false,
+ "prefill_summary": {
+  "n": 24,
+  "median_rel": -0.028620829424947203,
+  "mad_rel": 0.014315469721365826,
+  "min_rel": -0.6178581569320973,
+  "max_rel": 0.07817836818947321
+ },
+ "wall_rel": 0.4387980650352341,
+ "g2_pass": false,
+ "g3_mismatches": [
+  "chat-02|rep1",
+  "chat-02|rep2",
+  "chat-04|rep1",
+  "chat-04|rep2",
+  "code-03|rep1"
+ ],
+ "g3_pass": false,
+ "finish_reason_shift": {
+  "base": {
+   "length": 18,
+   "stop": 6
+  },
+  "cand": {
+   "length": 18,
+   "stop": 6
+  }
+ },
+ "g5": "PENDING (different-day replication required)",
+ "promotable": false
+}

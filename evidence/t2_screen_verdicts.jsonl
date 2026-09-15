@@ -1,0 +1,216 @@
+{
+ "model": "mlx-community/Qwen3-Coder-30B-A3B-Instruct-4bit",
+ "label": "screen-spec-30b-06b-k2",
+ "screen": true,
+ "g4_contamination": [],
+ "g4_pass": true,
+ "decode": {
+  "summary": {
+   "n": 24,
+   "median_rel": -0.13647652683473732,
+   "mad_rel": 0.11229678584524394,
+   "min_rel": -0.2819516958886592,
+   "max_rel": 0.14151082982200647
+  },
+  "sign_test": {
+   "verdict": "POWERED",
+   "pos": 9,
+   "neg": 15,
+   "discordant": 24,
+   "p": 0.30745625495910645
+  },
+  "missing_pairs": []
+ },
+ "g1_pass": false,
+ "prefill_summary": {
+  "n": 24,
+  "median_rel": -0.2063118003283309,
+  "mad_rel": 0.022971461997908005,
+  "min_rel": -0.31828722004588994,
+  "max_rel": -0.07531909043644647
+ },
+ "wall_rel": 0.16004214834512953,
+ "g2_pass": false,
+ "g3_mismatches": [
+  "chat-01|rep1",
+  "chat-01|rep2",
+  "chat-02|rep1",
+  "chat-02|rep2",
+  "chat-03|rep1"
+ ],
+ "g3_pass": false,
+ "finish_reason_shift": {
+  "base": {
+   "length": 14,
+   "stop": 10
+  },
+  "cand": {
+   "length": 16,
+   "stop": 8
+  }
+ },
+ "g5": "PENDING (different-day replication required)",
+ "promotable": false
+}
+{
+ "model": "mlx-community/Qwen3-Coder-30B-A3B-Instruct-4bit",
+ "label": "screen-spec-30b-06b-k3",
+ "screen": true,
+ "g4_contamination": [],
+ "g4_pass": true,
+ "decode": {
+  "summary": {
+   "n": 24,
+   "median_rel": -0.22365676591981837,
+   "mad_rel": 0.12976045927886792,
+   "min_rel": -0.3794258057230063,
+   "max_rel": 0.11278503990853395
+  },
+  "sign_test": {
+   "verdict": "POWERED",
+   "pos": 7,
+   "neg": 17,
+   "discordant": 24,
+   "p": 0.06391465663909912
+  },
+  "missing_pairs": []
+ },
+ "g1_pass": false,
+ "prefill_summary": {
+  "n": 24,
+  "median_rel": -0.2450720258501226,
+  "mad_rel": 0.02080308984099255,
+  "min_rel": -0.3181883216856983,
+  "max_rel": -0.10427561005955144
+ },
+ "wall_rel": 0.2195138715401186,
+ "g2_pass": false,
+ "g3_mismatches": [
+  "chat-01|rep1",
+  "chat-01|rep2",
+  "chat-02|rep1",
+  "chat-02|rep2",
+  "chat-03|rep1"
+ ],
+ "g3_pass": false,
+ "finish_reason_shift": {
+  "base": {
+   "length": 14,
+   "stop": 10
+  },
+  "cand": {
+   "length": 16,
+   "stop": 8
+  }
+ },
+ "g5": "PENDING (different-day replication required)",
+ "promotable": false
+}
+{
+ "model": "mlx-community/Qwen3-Coder-30B-A3B-Instruct-4bit",
+ "label": "screen-spec-30b-17b-k2",
+ "screen": true,
+ "g4_contamination": [],
+ "g4_pass": true,
+ "decode": {
+  "summary": {
+   "n": 24,
+   "median_rel": -0.1687141172931117,
+   "mad_rel": 0.10646037395758884,
+   "min_rel": -0.3245517023314961,
+   "max_rel": 0.09430541710961826
+  },
+  "sign_test": {
+   "verdict": "POWERED",
+   "pos": 10,
+   "neg": 14,
+   "discordant": 24,
+   "p": 0.5412561893463135
+  },
+  "missing_pairs": []
+ },
+ "g1_pass": false,
+ "prefill_summary": {
+  "n": 24,
+  "median_rel": -0.26145753758464996,
+  "mad_rel": 0.02551611675780746,
+  "min_rel": -0.4114745906365892,
+  "max_rel": -0.03352223986110181
+ },
+ "wall_rel": 0.22140375284590696,
+ "g2_pass": false,
+ "g3_mismatches": [
+  "chat-01|rep1",
+  "chat-01|rep2",
+  "chat-02|rep1",
+  "chat-02|rep2",
+  "chat-03|rep1"
+ ],
+ "g3_pass": false,
+ "finish_reason_shift": {
+  "base": {
+   "length": 14,
+   "stop": 10
+  },
+  "cand": {
+   "length": 16,
+   "stop": 8
+  }
+ },
+ "g5": "PENDING (different-day replication required)",
+ "promotable": false
+}
+{
+ "model": "mlx-community/Qwen3-Coder-30B-A3B-Instruct-4bit",
+ "label": "screen-spec-30b-17b-k3",
+ "screen": true,
+ "g4_contamination": [],
+ "g4_pass": true,
+ "decode": {
+  "summary": {
+   "n": 24,
+   "median_rel": -0.21884919652168544,
+   "mad_rel": 0.14489558186008822,
+   "min_rel": -0.4248929091910095,
+   "max_rel": 0.10120533174417123
+  },
+  "sign_test": {
+   "verdict": "POWERED",
+   "pos": 8,
+   "neg": 16,
+   "discordant": 24,
+   "p": 0.15158963203430176
+  },
+  "missing_pairs": []
+ },
+ "g1_pass": false,
+ "prefill_summary": {
+  "n": 24,
+  "median_rel": -0.29965538820098814,
+  "mad_rel": 0.017911891246807532,
+  "min_rel": -0.4107387339209976,
+  "max_rel": -0.0895980958121676
+ },
+ "wall_rel": 0.2644016388090762,
+ "g2_pass": false,
+ "g3_mismatches": [
+  "chat-01|rep1",
+  "chat-01|rep2",
+  "chat-02|rep1",
+  "chat-02|rep2",
+  "chat-03|rep1"
+ ],
+ "g3_pass": false,
+ "finish_reason_shift": {
+  "base": {
+   "length": 14,
+   "stop": 10
+  },
+  "cand": {
+   "length": 16,
+   "stop": 8
+  }
+ },
+ "g5": "PENDING (different-day replication required)",
+ "promotable": false
+}

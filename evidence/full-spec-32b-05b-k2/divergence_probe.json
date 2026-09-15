@@ -1,0 +1,137 @@
+{
+ "model": "mlx-community/Qwen2.5-Coder-32B-Instruct-4bit",
+ "cases": [
+  {
+   "prompt": "chat-01",
+   "div_char": 813,
+   "div_token_index": 180,
+   "exact_token_prefix": true,
+   "divergence": {
+    "gap": 0.0,
+    "top": " slowing",
+    "second": " which"
+   },
+   "controls": [
+    {
+     "gap": 4.6875,
+     "top": " you",
+     "second": " your",
+     "at": "25%"
+    },
+    {
+     "gap": 4.125,
+     "top": " Hands",
+     "second": " Arms",
+     "at": "50%"
+    },
+    {
+     "gap": 1.09375,
+     "top": " if",
+     "second": " your",
+     "at": "75%"
+    }
+   ],
+   "base_next": "which slows ",
+   "cand_next": "slowing down"
+  },
+  {
+   "prompt": "chat-03",
+   "div_char": 388,
+   "div_token_index": 86,
+   "exact_token_prefix": true,
+   "divergence": {
+    "gap": 0.015625,
+    "top": " resources",
+    "second": " up"
+   },
+   "controls": [
+    {
+     "gap": 0.140625,
+     "top": " as",
+     "second": ",",
+     "at": "25%"
+    },
+    {
+     "gap": 4.203125,
+     "top": "**\n",
+     "second": "**\n\n",
+     "at": "50%"
+    },
+    {
+     "gap": 3.984375,
+     "top": " you",
+     "second": " usage",
+     "at": "75%"
+    }
+   ],
+   "base_next": "up or down b",
+   "cand_next": "resources up"
+  },
+  {
+   "prompt": "chat-05",
+   "div_char": 270,
+   "div_token_index": 60,
+   "exact_token_prefix": true,
+   "divergence": {
+    "gap": 0.0,
+    "top": " typically",
+    "second": " usually"
+   },
+   "controls": [
+    {
+     "gap": 0.828125,
+     "top": ",",
+     "second": " like",
+     "at": "25%"
+    },
+    {
+     "gap": 3.78125,
+     "top": ".",
+     "second": ":\n\n",
+     "at": "50%"
+    },
+    {
+     "gap": 17.203125,
+     "top": " you",
+     "second": " your",
+     "at": "75%"
+    }
+   ],
+   "base_next": "typically in",
+   "cand_next": "usually invo"
+  },
+  {
+   "prompt": "code-02",
+   "div_char": 0,
+   "div_token_index": 0,
+   "exact_token_prefix": true,
+   "divergence": {
+    "gap": 0.015625,
+    "top": "Certainly",
+    "second": "To"
+   },
+   "controls": [
+    {
+     "gap": 0.015625,
+     "top": "Certainly",
+     "second": "To",
+     "at": "25%"
+    },
+    {
+     "gap": 0.015625,
+     "top": "Certainly",
+     "second": "To",
+     "at": "50%"
+    },
+    {
+     "gap": 0.015625,
+     "top": "Certainly",
+     "second": "To",
+     "at": "75%"
+    }
+   ],
+   "base_next": "To implement",
+   "cand_next": "Certainly! T"
+  }
+ ]
+}

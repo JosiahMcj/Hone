@@ -1,0 +1,194 @@
+{
+ "model": "mlx-community/Qwen2.5-Coder-32B-Instruct-4bit",
+ "label": "g5-spec-32b-05b-k2",
+ "screen": false,
+ "g4_contamination": [
+  [
+   "base",
+   "rep2",
+   -0.42337813923454326
+  ],
+  [
+   "base",
+   "rep3",
+   -0.4767724043601832
+  ]
+ ],
+ "g4_pass": false,
+ "decode": {
+  "summary": {
+   "n": 72,
+   "median_rel": 0.3799059049175316,
+   "mad_rel": 0.22097181066376703,
+   "min_rel": -0.03717437178271099,
+   "max_rel": 10.099667724298838
+  },
+  "sign_test": {
+   "verdict": "POWERED",
+   "pos": 67,
+   "neg": 5,
+   "discordant": 72,
+   "p": 6.387730835678276e-15
+  },
+  "missing_pairs": []
+ },
+ "g1_pass": true,
+ "prefill_summary": {
+  "n": 72,
+  "median_rel": -0.019074706276806574,
+  "mad_rel": 0.03740896318123965,
+  "min_rel": -0.4404374158743287,
+  "max_rel": 4.035467152744374
+ },
+ "wall_rel": -0.3499914942552318,
+ "g2_pass": true,
+ "g3_mismatches": [
+  "chat-01|rep1",
+  "chat-01|rep2",
+  "chat-01|rep3",
+  "chat-01|rep4",
+  "chat-01|rep5"
+ ],
+ "g3_pass": false,
+ "finish_reason_shift": {
+  "base": {
+   "length": 48,
+   "stop": 24
+  },
+  "cand": {
+   "length": 48,
+   "stop": 24
+  }
+ },
+ "g5": "PENDING (different-day replication required)",
+ "promotable": false
+}
+{
+ "model": "mlx-community/Qwen2.5-Coder-32B-Instruct-4bit",
+ "label": "g5r2-spec-32b-05b-k2",
+ "screen": false,
+ "g4_contamination": [
+  [
+   "base",
+   "rep5",
+   -0.41785330764882456
+  ],
+  [
+   "base",
+   "rep6",
+   -0.4165840597836544
+  ],
+  [
+   "cand",
+   "rep1",
+   -0.2969552061447509
+  ],
+  [
+   "cand",
+   "rep5",
+   -0.40005248703247653
+  ]
+ ],
+ "g4_pass": false,
+ "decode": {
+  "summary": {
+   "n": 72,
+   "median_rel": 0.1936027259439863,
+   "mad_rel": 0.18637110194167417,
+   "min_rel": -0.9178104628860155,
+   "max_rel": 1.5471977604196336
+  },
+  "sign_test": {
+   "verdict": "POWERED",
+   "pos": 58,
+   "neg": 14,
+   "discordant": 72,
+   "p": 1.6464300115968573e-07
+  },
+  "missing_pairs": []
+ },
+ "g1_pass": true,
+ "prefill_summary": {
+  "n": 72,
+  "median_rel": -0.02532547775512639,
+  "mad_rel": 0.028205243546397085,
+  "min_rel": -0.5677334466395911,
+  "max_rel": 0.300373661840005
+ },
+ "wall_rel": 0.0004148250986713009,
+ "g2_pass": true,
+ "g3_mismatches": [
+  "chat-01|rep1",
+  "chat-01|rep2",
+  "chat-01|rep3",
+  "chat-01|rep4",
+  "chat-01|rep5"
+ ],
+ "g3_pass": false,
+ "finish_reason_shift": {
+  "base": {
+   "length": 48,
+   "stop": 24
+  },
+  "cand": {
+   "length": 48,
+   "stop": 24
+  }
+ },
+ "g5": "PENDING (different-day replication required)",
+ "promotable": false
+}
+{
+ "model": "mlx-community/Qwen2.5-Coder-32B-Instruct-4bit",
+ "label": "g5r4-spec-32b-05b-k2",
+ "screen": false,
+ "g4_contamination": [],
+ "g4_pass": true,
+ "decode": {
+  "summary": {
+   "n": 72,
+   "median_rel": 0.20241254285855081,
+   "mad_rel": 0.07472798876974618,
+   "min_rel": -0.016000345995117682,
+   "max_rel": 0.5323443353164783
+  },
+  "sign_test": {
+   "verdict": "POWERED",
+   "pos": 66,
+   "neg": 6,
+   "discordant": 72,
+   "p": 7.255748219519502e-14
+  },
+  "missing_pairs": []
+ },
+ "g1_pass": true,
+ "prefill_summary": {
+  "n": 72,
+  "median_rel": -0.021019679573698935,
+  "mad_rel": 0.004492052381385558,
+  "min_rel": -0.7917461304590317,
+  "max_rel": -0.007678955015044453
+ },
+ "wall_rel": -0.10813527313101123,
+ "g2_pass": true,
+ "g3_mismatches": [
+  "chat-01|rep1",
+  "chat-01|rep2",
+  "chat-01|rep3",
+  "chat-01|rep4",
+  "chat-01|rep5"
+ ],
+ "g3_pass": false,
+ "finish_reason_shift": {
+  "base": {
+   "length": 48,
+   "stop": 24
+  },
+  "cand": {
+   "length": 48,
+   "stop": 24
+  }
+ },
+ "g5": "PENDING (different-day replication required)",
+ "promotable": false
+}

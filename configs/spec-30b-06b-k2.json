@@ -1,0 +1,6 @@
+{
+  "model": "mlx-community/Qwen3-Coder-30B-A3B-Instruct-4bit",
+  "draft_model": "mlx-community/Qwen3-0.6B-4bit",
+  "num_draft_tokens": 2,
+  "label": "spec-30b-06b-k2"
+}

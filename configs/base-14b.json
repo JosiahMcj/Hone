@@ -1,0 +1,4 @@
+{
+ "model": "mlx-community/Qwen2.5-Coder-14B-Instruct-4bit",
+ "label": "baseline-qwen25-coder-14b"
+}

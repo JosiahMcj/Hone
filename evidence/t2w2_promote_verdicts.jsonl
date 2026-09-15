@@ -1,0 +1,54 @@
+{
+ "model": "mlx-community/Qwen2.5-Coder-32B-Instruct-4bit",
+ "label": "full-spec-32b-05b-k2",
+ "screen": false,
+ "g4_contamination": [],
+ "g4_pass": true,
+ "decode": {
+  "summary": {
+   "n": 72,
+   "median_rel": 0.20060419365142035,
+   "mad_rel": 0.07625947941400635,
+   "min_rel": -0.01874266658419066,
+   "max_rel": 0.5251183625574087
+  },
+  "sign_test": {
+   "verdict": "POWERED",
+   "pos": 66,
+   "neg": 6,
+   "discordant": 72,
+   "p": 7.255748219519502e-14
+  },
+  "missing_pairs": []
+ },
+ "g1_pass": true,
+ "prefill_summary": {
+  "n": 72,
+  "median_rel": -0.021762608559578345,
+  "mad_rel": 0.004258804692974183,
+  "min_rel": -0.05658405442056402,
+  "max_rel": -0.005836945301527785
+ },
+ "wall_rel": -0.10976633292790061,
+ "g2_pass": true,
+ "g3_mismatches": [
+  "chat-01|rep1",
+  "chat-01|rep2",
+  "chat-01|rep3",
+  "chat-01|rep4",
+  "chat-01|rep5"
+ ],
+ "g3_pass": false,
+ "finish_reason_shift": {
+  "base": {
+   "length": 48,
+   "stop": 24
+  },
+  "cand": {
+   "length": 48,
+   "stop": 24
+  }
+ },
+ "g5": "PENDING (different-day replication required)",
+ "promotable": false
+}

@@ -1,0 +1,125 @@
+{
+ "header": {
+  "label": "72b-base",
+  "mode": "decode",
+  "target": "Qwen/Qwen2.5-72B-Instruct-AWQ",
+  "draft": null,
+  "spec_tokens": null,
+  "prefix_cache": false,
+  "tp": 4,
+  "decode_tokens": 256,
+  "reps": 3,
+  "vllm": "0.29.0",
+  "load_s": 77.5
+ },
+ "rows": [
+  {
+   "id": "chat-01",
+   "rep": 0,
+   "gen_tokens": 256,
+   "prefill_s": 0.0625,
+   "decode_s": 16.5689,
+   "decode_tps": 15.39,
+   "token_sha": "27401ace5a3b6d15"
+  },
+  {
+   "id": "code-01",
+   "rep": 0,
+   "gen_tokens": 256,
+   "prefill_s": 0.0662,
+   "decode_s": 16.5648,
+   "decode_tps": 15.39,
+   "token_sha": "a82584fbc443a64f"
+  },
+  {
+   "id": "long-01",
+   "rep": 0,
+   "gen_tokens": 256,
+   "prefill_s": 0.3202,
+   "decode_s": 16.557,
+   "decode_tps": 15.4,
+   "token_sha": "4366359cf0d561dc"
+  },
+  {
+   "id": "code-02",
+   "rep": 0,
+   "gen_tokens": 256,
+   "prefill_s": 0.0625,
+   "decode_s": 16.5822,
+   "decode_tps": 15.38,
+   "token_sha": "248f0e71f714a01d"
+  },
+  {
+   "id": "chat-01",
+   "rep": 1,
+   "gen_tokens": 256,
+   "prefill_s": 0.0627,
+   "decode_s": 16.567,
+   "decode_tps": 15.39,
+   "token_sha": "27401ace5a3b6d15"
+  },
+  {
+   "id": "code-01",
+   "rep": 1,
+   "gen_tokens": 256,
+   "prefill_s": 0.0619,
+   "decode_s": 16.5576,
+   "decode_tps": 15.4,
+   "token_sha": "a82584fbc443a64f"
+  },
+  {
+   "id": "long-01",
+   "rep": 1,
+   "gen_tokens": 256,
+   "prefill_s": 0.3153,
+   "decode_s": 16.5679,
+   "decode_tps": 15.39,
+   "token_sha": "4366359cf0d561dc"
+  },
+  {
+   "id": "code-02",
+   "rep": 1,
+   "gen_tokens": 256,
+   "prefill_s": 0.0622,
+   "decode_s": 16.5539,
+   "decode_tps": 15.4,
+   "token_sha": "248f0e71f714a01d"
+  },
+  {
+   "id": "chat-01",
+   "rep": 2,
+   "gen_tokens": 256,
+   "prefill_s": 0.0622,
+   "decode_s": 16.5549,
+   "decode_tps": 15.4,
+   "token_sha": "27401ace5a3b6d15"
+  },
+  {
+   "id": "code-01",
+   "rep": 2,
+   "gen_tokens": 256,
+   "prefill_s": 0.0626,
+   "decode_s": 16.5667,
+   "decode_tps": 15.39,
+   "token_sha": "a82584fbc443a64f"
+  },
+  {
+   "id": "long-01",
+   "rep": 2,
+   "gen_tokens": 256,
+   "prefill_s": 0.3138,
+   "decode_s": 16.5651,
+   "decode_tps": 15.39,
+   "token_sha": "4366359cf0d561dc"
+  },
+  {
+   "id": "code-02",
+   "rep": 2,
+   "gen_tokens": 256,
+   "prefill_s": 0.0621,
+   "decode_s": 16.5701,
+   "decode_tps": 15.39,
+   "token_sha": "248f0e71f714a01d"
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+#!/bin/zsh
+# The 32B promoted configuration: Qwen2.5-Coder-32B with a 0.5B
+# speculative draft, k=2, greedy. I measured this on a second box (M3
+# Ultra, 96GB): 34.7 -> 41.7 tokens/sec decode (+20%, p=7e-14,
+# replicated), prompt processing within noise, quality = the near-tie-
+# flip class (see PROTOCOL.md / RESULTS.md). On a 24GB machine the
+# 32B-4bit weights (~17GB) leave little headroom -- expect swapping or a
+# first-run download; the 24GB daily driver is the 14B `hone-fast`.
+#
+# Usage: hone-fast-32b "your prompt"        (extra args pass through)
+exec "$HOME/hone/.venv/bin/python" -m mlx_lm generate \
+  --model mlx-community/Qwen2.5-Coder-32B-Instruct-4bit \
+  --draft-model mlx-community/Qwen2.5-0.5B-Instruct-4bit \
+  --num-draft-tokens 2 \
+  --temp 0.0 \
+  --max-tokens 1024 \
+  --prompt "$@"
